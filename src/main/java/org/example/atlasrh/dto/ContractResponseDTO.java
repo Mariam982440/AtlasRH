@@ -1,7 +1,4 @@
-package com.wegrow.atlasrhv1.dto;
-
-import jakarta.persistence.Column;
-import com.wegrow.atlasrhv1.model.Contract;
+package org.example.atlasrh.dto;
 
 import java.time.LocalDate;
 
