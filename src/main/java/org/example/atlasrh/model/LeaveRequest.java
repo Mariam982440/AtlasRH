@@ -1,10 +1,11 @@
-package com.wegrow.atlasrhv1.model;
+package org.example.atlasrh.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.example.atlasrh.Enum.LeaveStatus;
 
 import java.time.LocalDate;
 
@@ -39,12 +40,5 @@ public class LeaveRequest {
         this.endDate = endDate;
         this.reason = reason;
         this.status = status;
-    }
-
-    public enum LeaveStatus {
-        PENDING,
-        APPROVED,
-        REJECTED,
-        CANCELLED
     }
 }
