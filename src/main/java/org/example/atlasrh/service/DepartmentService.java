@@ -1,9 +1,8 @@
-package com.wegrow.atlasrhv1.service;
+package org.example.atlasrh.service;
 
-import com.wegrow.atlasrhv1.dto.DepartmentResponseDTO;
-import com.wegrow.atlasrhv1.dto.EmployeeResponseDTO;
-import com.wegrow.atlasrhv1.model.Department;
-import com.wegrow.atlasrhv1.model.Employee;
+import org.example.atlasrh.dto.DepartmentResponseDTO;
+import org.example.atlasrh.model.Department;
+import org.example.atlasrh.model.Employee;
 
 import java.util.List;
 
@@ -18,4 +17,6 @@ public interface DepartmentService {
     List<DepartmentResponseDTO> viewAll();
 
     List<DepartmentResponseDTO> viewAllByManager(Long managerId);
+
+    boolean deleteDepartment(Long id);
 }
