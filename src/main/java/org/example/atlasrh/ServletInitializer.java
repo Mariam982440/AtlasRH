@@ -1,4 +1,4 @@
-package com.wegrow.atlasrhv1;
+package org.example.atlasrh;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Atlasrhv1Application.class);
+        return application.sources(AtlasRhApplication.class);
     }
 
 }
