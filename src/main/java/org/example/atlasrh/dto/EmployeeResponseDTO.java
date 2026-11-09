@@ -1,7 +1,6 @@
-package com.wegrow.atlasrhv1.dto;
+package org.example.atlasrh.dto;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public record EmployeeResponseDTO(
         Long matricule,
