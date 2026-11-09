@@ -1,4 +1,4 @@
-package com.wegrow.atlasrhv1.dto;
+package org.example.atlasrh.dto;
 
 public record LeaveTypeResponseDTO(
         Integer id,
