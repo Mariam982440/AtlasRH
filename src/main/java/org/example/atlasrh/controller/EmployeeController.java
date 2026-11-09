@@ -1,8 +1,8 @@
-package com.wegrow.atlasrhv1.controller;
+package org.example.atlasrh.controller;
 
-import com.wegrow.atlasrhv1.dto.EmployeeResponseDTO;
-import com.wegrow.atlasrhv1.model.Employee;
-import com.wegrow.atlasrhv1.service.EmployeeService;
+import org.example.atlasrh.dto.EmployeeResponseDTO;
+import org.example.atlasrh.model.Employee;
+import org.example.atlasrh.service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,14 +17,17 @@ public class EmployeeController {
     public EmployeeController(EmployeeService employeeService){
         this.employeeService = employeeService;
     }
+
+    //PostMan done
     @GetMapping
     public ResponseEntity<List<EmployeeResponseDTO>> getAll(){
 
         return ResponseEntity.ok(employeeService.viewAll());
     }
 
+    //PostMan done
     @PostMapping("/{id}")
-    public ResponseEntity<?> create(@RequestBody Employee employee, @PathVariable Long id){
+    public ResponseEntity<?> create(@RequestBody Employee employee, @PathVariable("id") Long id){
         try {
             Employee created = employeeService.create(employee, id);
 
@@ -36,6 +39,16 @@ public class EmployeeController {
             return ResponseEntity
                     .status(HttpStatus.CONFLICT)
                     .body(e.getMessage());
+        }
+    }
+
+    //PostMan done
+    @GetMapping("/{id}")
+    public ResponseEntity<?> viewEmployee(@PathVariable("id") Long id){
+        try{
+            return ResponseEntity.ok(employeeService.viewEmployee(id));
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 }
