@@ -1,11 +1,10 @@
-package com.wegrow.atlasrhv1.service;
+package org.example.atlasrh.service;
 
-import com.wegrow.atlasrhv1.dto.DepartmentResponseDTO;
-import com.wegrow.atlasrhv1.dto.EmployeeResponseDTO;
-import com.wegrow.atlasrhv1.mapper.DepartmentMapper;
-import com.wegrow.atlasrhv1.model.Department;
-import com.wegrow.atlasrhv1.model.Employee;
-import com.wegrow.atlasrhv1.repository.DepartmentRepository;
+import org.example.atlasrh.dto.DepartmentResponseDTO;
+import org.example.atlasrh.mapper.DepartmentMapper;
+import org.example.atlasrh.model.Department;
+import org.example.atlasrh.model.Employee;
+import org.example.atlasrh.repository.DepartmentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -46,6 +45,16 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public List<DepartmentResponseDTO> viewAllByManager(Long managerId){
+//        List<DepartmentResponseDTO> departments = departmentRepository.findAll().stream()
+//                .filter(d -> d.getEmployees())
         return null;
+    }
+
+    @Override
+    public boolean deleteDepartment(Long id){
+
+        Department department = departmentRepository.findById(id).orElseThrow( () -> new RuntimeException("There is no Department with this ID"));
+        departmentRepository.delete(department);
+        return true;
     }
 }
