@@ -1,6 +1,6 @@
-package com.wegrow.atlasrhv1.repository;
+package org.example.atlasrh.repository;
 
-import com.wegrow.atlasrhv1.model.Department;
+import org.example.atlasrh.model.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
