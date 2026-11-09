@@ -1,7 +1,8 @@
-package com.wegrow.atlasrhv1.model;
+package org.example.atlasrh.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,7 +20,7 @@ public class Department {
     private String description;
 
     @OneToMany
-    List<Employee> employees;
+    List<Employee> employees = new ArrayList<>();
 
     public Department() {}
     public Department(String name, String description) {
