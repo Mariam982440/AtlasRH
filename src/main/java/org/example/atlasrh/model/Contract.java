@@ -1,19 +1,16 @@
-package com.wegrow.atlasrhv1.model;
+package org.example.atlasrh.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "contract")
 @Setter
 @Getter
-@NoArgsConstructor
 @ToString
 public class Contract {
 
@@ -34,8 +31,10 @@ public class Contract {
     private Long salary;
 
     @OneToMany
-    List<Employee> employee;
+    @Setter(AccessLevel.NONE)
+    List<Employee> employee = new ArrayList<>();
 
+    public Contract(){}
     public Contract(ContractType contractType, LocalDate startDate, LocalDate endDate, Long salary) {
         this.contractType = contractType;
         this.startDate = startDate;
@@ -47,5 +46,9 @@ public class Contract {
         CDI,
         CDD,
         STAGE
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee.add(employee);
     }
 }
