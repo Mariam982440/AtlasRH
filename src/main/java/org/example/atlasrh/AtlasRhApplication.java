@@ -1,13 +1,13 @@
-package com.wegrow.atlasrhv1;
+package org.example.atlasrh;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Atlasrhv1Application {
+public class AtlasRhApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Atlasrhv1Application.class, args);
+        SpringApplication.run(AtlasRhApplication.class, args);
     }
 
 }
