@@ -1,10 +1,11 @@
-package com.wegrow.atlasrhv1.model;
+package org.example.atlasrh.model;
 
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
+import org.example.atlasrh.Enum.RoleType;
 
 @Entity
 @Table( name = "employee" )
@@ -42,7 +43,7 @@ public class Employee {
     Contract contract;
 
     @OneToMany
-    List<LeaveRequest> leaveRequests;
+    List<LeaveRequest> leaveRequests = new ArrayList<>();
 
     public Employee(){
 
@@ -121,9 +122,5 @@ public class Employee {
         this.department = department;
     }
 
-    public enum RoleType{
-        RH_MANAGER,
-        MANAGER
-    }
 
 }
